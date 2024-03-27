@@ -1,10 +1,11 @@
 import React from 'react'
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 function Head() {
   return (
     <div>
       <div>
-        <img src="/my-tube/public/menu.png" alt="menu" />
+        <MenuRoundedIcon/>
       </div>
     </div>
   )
