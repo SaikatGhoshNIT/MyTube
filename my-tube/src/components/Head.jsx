@@ -8,8 +8,8 @@ import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 function Head() {
   return (
     <div className="grid grid-flow-col">
-      <div>
-        <MenuRoundedIcon fontSize="large"/>
+      <div className="flex">
+        <button><MenuRoundedIcon fontSize="large"/></button>
         <img src="https://t3.ftcdn.net/jpg/05/07/46/84/240_F_507468479_HfrpT7CIoYTBZSGRQi7RcWgo98wo3vb7.jpg" alt="Logo" />
       </div>
       <div>
