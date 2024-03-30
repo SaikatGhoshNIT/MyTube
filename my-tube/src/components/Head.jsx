@@ -4,16 +4,17 @@ import YoutubeSearchedForTwoToneIcon from '@mui/icons-material/YoutubeSearchedFo
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import logo from "../undraw_video_files_fu10.svg";
 
 function Head() {
   return (
     <div className="grid grid-flow-col">
       <div className="flex">
         <button><MenuRoundedIcon fontSize="large"/></button>
-        <img src="https://t3.ftcdn.net/jpg/05/07/46/84/240_F_507468479_HfrpT7CIoYTBZSGRQi7RcWgo98wo3vb7.jpg" alt="Logo" />
+        <img src={logo} alt="Logo" />
       </div>
       <div>
-        <input type="text" />
+        <input type="text" className="border-solid"/>
         <button><YoutubeSearchedForTwoToneIcon fontSize="small"/></button>
         <button><KeyboardVoiceIcon fontSize="large"/></button>
       </div>
