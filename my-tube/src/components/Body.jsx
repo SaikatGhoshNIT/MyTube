@@ -5,7 +5,7 @@ import MainContener from './MainContener'
 function Body() {
   return (
     <div className="flex">
-      <SideBar/>
+      <SideBar />
       <MainContener/>
     </div>
   )
