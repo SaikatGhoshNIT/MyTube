@@ -10,12 +10,14 @@ function SideBar() {
       <li>Live</li>
     </ul>
 
-    <hr className="pt-4"/>
+    <hr/>
 
     <ul className="font-mono pt-5">
       <li>You</li>
       <li>History</li>
     </ul> 
+
+    <hr/>
     
     <h1 className="font-bold pt-5">Subscription</h1>
     <ul>
@@ -23,7 +25,9 @@ function SideBar() {
       <li>Sports</li>
       <li>Gaming</li>
       <li>Movies</li>
-    </ul>  
+    </ul> 
+
+    <hr/> 
 
     <h1 className="font-bold  pt-5">Popular</h1>
     <ul>
