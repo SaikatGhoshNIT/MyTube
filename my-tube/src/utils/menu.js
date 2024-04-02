@@ -15,3 +15,4 @@ const appmenu = createSlice({
 })
 
 export default appmenu;
+export const {toggleMenu} = appmenu.actions

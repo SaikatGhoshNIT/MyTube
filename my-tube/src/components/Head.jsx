@@ -7,12 +7,17 @@ import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import logo from "../undraw_video_files_fu10.svg";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
 import {useDispatch} from "react-redux";
+import {toggleMenu} from "../utils/menu.js";
 
 function Head() {
+  const dispatch = useDispatch();
+  const toggleButton = ()=>{
+    dispatch(toggleMenu)
+  }
   return (
     <div className="flex flex-row items-center justify-between py-0 px-4 h-[60px] shadow-lg">
       <div className="flex items-center justify-center">
-        <button className="pr-3">
+        <button className="pr-3" onClick={()=>{toggleButton()}}>
           <MenuRoundedIcon sx={{ fontSize: 30 }} />
         </button>
         <img
