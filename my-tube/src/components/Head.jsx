@@ -6,6 +6,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import logo from "../undraw_video_files_fu10.svg";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
+import {useDispatch} from "react-redux";
 
 function Head() {
   return (
