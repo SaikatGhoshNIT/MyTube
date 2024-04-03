@@ -12,7 +12,7 @@ import {toggleMenu} from "../utils/menu.js";
 function Head() {
   const dispatch = useDispatch();
   const toggleButton = ()=>{
-    dispatch(toggleMenu)
+    dispatch(toggleMenu())
   }
   return (
     <div className="flex flex-row items-center justify-between py-0 px-4 h-[60px] shadow-lg">
