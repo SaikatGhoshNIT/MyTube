@@ -14,5 +14,5 @@ const appmenu = createSlice({
     }
 })
 
-export default appmenu;
+export default appmenu.reducer;
 export const {toggleMenu} = appmenu.actions
