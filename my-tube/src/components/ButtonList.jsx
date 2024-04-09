@@ -1,8 +1,11 @@
 import React from 'react'
+import Button from './Button'
 
 function ButtonList() {
   return (
-    <div>ButtonList</div>
+    <div>
+      <Button/>
+    </div>
   )
 }
 
