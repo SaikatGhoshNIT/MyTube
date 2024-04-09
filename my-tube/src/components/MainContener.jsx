@@ -4,7 +4,7 @@ import VideoContener from './VideoContener'
 
 function MainContener() {
   return (
-    <div className="">
+    <div className="px-8 mx-5">
         <ButtonList/>
         <VideoContener/>
     </div>
