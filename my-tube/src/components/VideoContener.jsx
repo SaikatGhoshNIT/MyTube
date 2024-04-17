@@ -15,7 +15,7 @@ const getVideos = async () => {
 }
 
   return (
-    <div>VideoContener</div>
+    <div className='p-5 m-2'>VideoContener</div>
   )
 }
 
