@@ -12,7 +12,7 @@ function VideoCard({info}) {
     
 
   return (
-    <div className='p-2 m-2 w-80 shadow-lg'>
+    <div className='p-2 m-2 w-80 shadow-lg hover:w-100 hover:shadow-black hover:rounded-2xl'>
         <img className='rounded-lg' src={thumbnails.medium.url} alt="Thumbnail" />
         <ul className='p-2'>
             <li className='font-bold pb-2'>{title}</li>
