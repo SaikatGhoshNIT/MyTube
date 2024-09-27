@@ -33,7 +33,12 @@ function VideoContener() {
           <VideoCard key={video.id} info={video} />
         ))
       ) : (
-        <p>Loading videos...</p>  // Fallback when videos are still being fetched
+        <div className="relative w-full h-48">
+      <div className={`bg-gray-300 animate-shimmer ${shimmer ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="bg-gray-200 h-10 w-full mb-4"></div>
+        <div className="bg-gray-200 h-2 w-3/4"></div>
+      </div>
+    </div>  // Fallback when videos are still being fetched
       )}
     </div>
   )
