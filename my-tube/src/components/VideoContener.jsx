@@ -25,21 +25,15 @@ function VideoContener() {
 // }, [videos]);  // Runs this effect whenever `videos` changes
 
   return (
-    <div className='p-5 m-2 flex flex-wrap'>
+    <div className='p-5 m-2 flex justify-between flex-wrap'>
       {/*videos.map(video =><VideoCard key={video.id} info={video}/>)*/}
       {/*<VideoCard info={videos[0]}/>*/} 
       {videos.length > 0 ? (
         videos.map((video) => (
           <VideoCard key={video.id} info={video} />
         ))
-      ) : (
-        <div className="relative w-full h-48">
-      <div className={`bg-gray-300 animate-shimmer ${shimmer ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="bg-gray-200 h-10 w-full mb-4"></div>
-        <div className="bg-gray-200 h-2 w-3/4"></div>
-      </div>
-    </div>  // Fallback when videos are still being fetched
-      )}
+      ) : ( <p>Loading...</p>
+        )}
     </div>
   )
 }
