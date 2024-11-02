@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 import { useEffect } from 'react'
 import {YOUTUBE_API} from '../utils/constant.js'
 import VideoCard from './VideoCard.jsx';
@@ -24,16 +24,24 @@ function VideoContener() {
 //   console.log(videos);  // This will log when `videos` is updated
 // }, [videos]);  // Runs this effect whenever `videos` changes
 
+  if(!videos.length){
+    return(
+      <Suspense fallback={<div>Loading...</div>}>
+        <div>Data is Loading...</div>
+      </Suspense>
+    )
+  }
+
   return (
     <div className='p-5 m-2 flex justify-between flex-wrap'>
       {/*videos.map(video =><VideoCard key={video.id} info={video}/>)*/}
       {/*<VideoCard info={videos[0]}/>*/} 
-      {videos.length > 0 ? (
+      {//videos.length > 0 ? (
         videos.map((video) => (
           <VideoCard key={video.id} info={video} />
         ))
-      ) : ( <p>Loading...</p>
-        )}
+      //) : ( <p>Loading...</p>)
+      }
     </div>
   )
 }
