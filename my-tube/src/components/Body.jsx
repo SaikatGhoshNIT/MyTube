@@ -1,12 +1,14 @@
 import React from 'react'
 import SideBar from './SideBar'
 import MainContener from './MainContener'
+import WatchPage from './WatchPage'
+import { Outlet } from 'react-router-dom'
 
 function Body() {
   return (
     <div className="flex">
       <SideBar />
-      <MainContener/>
+      <Outlet/>
     </div>
   )
 }

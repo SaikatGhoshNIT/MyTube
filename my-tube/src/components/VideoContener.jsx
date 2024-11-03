@@ -2,6 +2,7 @@ import React, { Suspense, useState } from 'react'
 import { useEffect } from 'react'
 import {YOUTUBE_API} from '../utils/constant.js'
 import VideoCard from './VideoCard.jsx';
+import { Link } from 'react-router-dom';
 
 function VideoContener() {
 
@@ -38,7 +39,9 @@ function VideoContener() {
       {/*<VideoCard info={videos[0]}/>*/} 
       {//videos.length > 0 ? (
         videos.map((video) => (
+          <Link to={"/watch?v="+video.id}>
           <VideoCard key={video.id} info={video} />
+          </Link>
         ))
       //) : ( <p>Loading...</p>)
       }
