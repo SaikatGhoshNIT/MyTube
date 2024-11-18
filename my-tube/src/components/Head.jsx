@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect, useState} from "react";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import YoutubeSearchedForTwoToneIcon from "@mui/icons-material/YoutubeSearchedForTwoTone";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
@@ -8,8 +8,29 @@ import logo from "../undraw_video_files_fu10.svg";
 import VideoCallIcon from "@mui/icons-material/VideoCall";
 import {useDispatch} from "react-redux";
 import {toggleMenu} from "../utils/menu.js";
+import { Youtube_Search_API } from "../utils/constant.js";
+
 
 function Head() {
+
+  const [searchQuery, setSearchQuery] = useState("");
+ 
+
+  //Debouncing
+  useEffect(()=>{
+    
+    const timer = setTimeout(getSearchSuggestion(),200);
+    return ()=>{
+      clearTimeout(timer)
+    }
+  },[searchQuery]);
+
+  const getSearchSuggestion = async () =>{
+    const data = await fetch (Youtube_Search_API+searchQuery)
+    const jsondata = await JSON.parse(data);
+    console.log(jsondata);
+  }
+
   const dispatch = useDispatch();
   const toggleButton = ()=>{
     dispatch(toggleMenu())
@@ -34,6 +55,8 @@ function Head() {
           type="text"
           placeholder="Search"
           className="border-solid border-red-400 border-[1px] w-[450px] pt-[3px] pb-[3px] pl-[15px] pr-[15px] rounded-l-full"
+          value={searchQuery}
+          onChange={(e)=>{setSearchQuery(e.target.value)}}
         />
         <button className="border-solid border-red-400 border-[1px] pt-[3px] pb-[2.5px] pl-[15px] pr-[15px] rounded-r-full">
           <YoutubeSearchedForTwoToneIcon fontSize="small" />

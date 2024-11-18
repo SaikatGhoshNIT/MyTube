@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react'
 import { useEffect } from 'react'
 import {YOUTUBE_API} from '../utils/constant.js'
-import VideoCard from './VideoCard.jsx';
+import VideoCard , {RedBorderVideoCard} from './VideoCard.jsx';
 import { Link } from 'react-router-dom';
 
 function VideoContener() {
@@ -16,7 +16,7 @@ function VideoContener() {
     const data = await fetch(YOUTUBE_API);
     const dataJSON = await data.json();
     
-    console.log(dataJSON.items[0]);  // This will log the first item from the API
+    //console.log(dataJSON.items[0]);  // This will log the first item from the API
     setVideos(dataJSON.items);       // This sets the state asynchronously
   };
 
@@ -37,10 +37,11 @@ function VideoContener() {
     <div className='p-5 m-2 flex justify-between flex-wrap'>
       {/*videos.map(video =><VideoCard key={video.id} info={video}/>)*/}
       {/*<VideoCard info={videos[0]}/>*/} 
+      {/*videos[0]  && <RedBorderVideoCard info={videos[0]}></RedBorderVideoCard>*/}
       {//videos.length > 0 ? (
         videos.map((video) => (
-          <Link to={"/watch?v="+video.id}>
-          <VideoCard key={video.id} info={video} />
+          <Link key={video.id} to={"/watch?v="+video.id}>
+          <VideoCard info={video} />
           </Link>
         ))
       //) : ( <p>Loading...</p>)

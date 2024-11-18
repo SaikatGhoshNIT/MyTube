@@ -24,4 +24,10 @@ function VideoCard({info}) {
   )
 }
 
+/*
+//Higher Order function
+export const RedBorderVideoCard = ({info}) =>{
+  return <div className='p-1 m-1 border-spacing-1 border-red-900'><VideoCard info={info}/></div>
+}*/
+
 export default VideoCard
