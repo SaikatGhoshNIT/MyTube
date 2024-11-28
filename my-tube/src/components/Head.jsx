@@ -16,7 +16,7 @@ function Head() {
   const [searchQuery, setSearchQuery] = useState("");
  
 
-  //Debouncing
+  //Debouncing -need to learn
   useEffect(()=>{
     
     const timer = setTimeout(getSearchSuggestion(),200);
@@ -25,9 +25,12 @@ function Head() {
     }
   },[searchQuery]);
 
+  //
+
   const getSearchSuggestion = async () =>{
     const data = await fetch (Youtube_Search_API+searchQuery)
     const jsondata = await JSON.parse(data);
+  
     console.log(jsondata);
   }
 
